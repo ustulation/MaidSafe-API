@@ -53,6 +53,8 @@ class PrivateClient {
   PrivateClient() : maid_node_nfs_(), account_handler_() {}
 #endif
 
+  detail::AccountHandler& GetAccountHandler() { return account_handler_; }
+
   // Retrieves and decrypts account info and logs in to an existing account.  Throws on error.
   static std::future<std::unique_ptr<PrivateClient>> Login(Keyword keyword, Pin pin,
                                                            Password password);
